@@ -1,13 +1,15 @@
 import React from 'react';
 
-type Props = {
+interface Props {
   period: string;
 }
 
 const PeriodButton: React.FC<Props> = ({ period }) => {
-  console.log(period);
-
-  return <div className="text-xl">PeriodButton</div>;
+  return (
+    <button type="button" className="text-xl">
+      {period}
+    </button>
+  );
 };
 
 export default PeriodButton;
