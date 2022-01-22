@@ -5,7 +5,7 @@ import { WeatherType } from './weather.types';
 
 const initialState: WeatherType = {
   city: '',
-  currentWeather: { name: '' },
+  currentWeather: { name: '', weather: [{}], main: {}, wind:{}, sys: {} },
   hourlyWeather: [],
   dailyWeather: [],
 };

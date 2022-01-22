@@ -8,14 +8,13 @@ import Daily from './pages/daily';
 
 function App(): JSX.Element {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/current" element={<Current />} />
-        <Route path="/hourly" element={<Hourly />} />
-        <Route path="/daily" element={<Daily />} />
-        {/* <Route element={() => <Current />} /> */}
-      </Routes>
-    </Layout>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="current" element={<Current />} />
+        <Route path="hourly" element={<Hourly />} />
+        <Route path="daily" element={<Daily />} />
+      </Route>
+    </Routes>
   );
 }
 

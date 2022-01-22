@@ -1,15 +1,16 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 import Header from './Header';
 
-type LayoutType = React.PropsWithChildren<unknown>;
-
-const Layout = ({ children }: LayoutType): JSX.Element => {
+const Layout = (): JSX.Element => {
   return (
-    <div>
+    <>
       <Header />
-      <main className="flex flex-col items-center w-screen p-4">{children}</main>
-    </div>
+      <main className="flex flex-col items-center w-screen p-4">
+        <Outlet />
+      </main>
+    </>
   );
 };
 

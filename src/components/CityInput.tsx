@@ -15,17 +15,21 @@ const CityInput: React.FC = () => {
   };
 
   return (
-    <div className="text-xl">
+    <div className="text-xl w-1/3 text-center">
       <input
         type="text"
+        placeholder="City"
         value={city}
         onChange={(e) => setCity(e.target.value)}
-        className="border border-black"
+        className="py-1 px-3 border border-black rounded"
       />
-      <button type="button" onClick={handleCitySearch}>
+      <button
+        type="button"
+        className="py-1 px-3 ml-4 text-white bg-blue-400 hover:bg-blue-500 border-blue-500 border-2 rounded"
+        onClick={handleCitySearch}
+      >
         Go
       </button>
-      <p>CityInput</p>
     </div>
   );
 };
