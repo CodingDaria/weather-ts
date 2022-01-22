@@ -55,17 +55,3 @@ export type WeatherType = {
   hourlyWeather: PeriodicWeather[],
   dailyWeather: PeriodicWeather[],
 };
-
-// {
-//   currentWeather: {
-//     base: 'stations',
-
-//     visibility: 10000,
-
-//     clouds: {
-//       all: 75
-//     },
-
-//     cod: 200
-//   }
-// }

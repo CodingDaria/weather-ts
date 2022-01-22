@@ -17,7 +17,7 @@ const setWeather = (payload: any) => ({
 export const getCityWeather =
   (city: string, handleSuccess: () => void) =>
   async (dispatch: AppDispatch): Promise<void> => {
-    const cityUrl = `http://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
+    const cityUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
       city,
     )}&appid=${OWM_API_KEY}&units=metric`;
 
