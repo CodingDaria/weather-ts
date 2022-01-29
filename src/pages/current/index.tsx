@@ -14,8 +14,7 @@ const CurrentTab = (): JSX.Element => {
   const timezone = currentWeather?.timezone || 0;
 
   return currentWeather.name ? (
-    <div className="flex flex-col items-center p-4">
-      <div className="text-3xl font-bold">{currentWeather.name}</div>
+    <>
       <div className="flex">
         <div className="flex flex-col items-center m-3 mr-8">
           <img
@@ -44,7 +43,7 @@ const CurrentTab = (): JSX.Element => {
         </div>
         <div className="flex flex-col items-center mx-8">
           <div className="m-1 text-lg">
-            {(currentWeather.wind.speed || 0).toFixed(1)} m/s; {currentWeather.wind.deg} &deg;
+            {(currentWeather.wind.speed || 0).toFixed(1)} m/s; {currentWeather.wind.deg}&deg;
           </div>
           <div className="text-sm">Wind</div>
         </div>
@@ -59,7 +58,7 @@ const CurrentTab = (): JSX.Element => {
       <div className="m-2 text-sm">
         Last update: {new Date((currentWeather.dt || 0) * 1000).toLocaleString()}
       </div>
-    </div>
+    </>
   ) : <div />;
 };
 

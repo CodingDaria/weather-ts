@@ -3,7 +3,7 @@ interface ICoord {
   lat: number;
 }
 
-interface IWeather {
+export interface IWeather {
   id?: number;
   main?: string;
   description?: string;
@@ -45,13 +45,45 @@ interface CurrentWeather {
   sys: ISys;
 }
 
-interface PeriodicWeather {
-  dt?: number;
+export interface IHourWeather {
+  dt: number;
+  feels_like: number;
+  humidity: number;
+  pop: number;
+  pressure: number;
+  temp: number;
+  weather: IWeather[];
+  wind_deg: number;
+  wind_speed: number;
+}
+
+export interface IDayFeelsLike {
+  day: number;
+  night: number;
+  eve: number;
+  morn: number;
+}
+
+export interface IDayTemp extends IDayFeelsLike {
+  min: number;
+  max: number;
+}
+
+export interface IDayWeather {
+  dt: number;
+  humidity: number;
+  pop: number;
+  pressure: number;
+  temp: IDayTemp;
+  feels_like: IDayFeelsLike;
+  weather: IWeather[];
+  wind_deg: number;
+  wind_speed: number;
 }
 
 export type WeatherType = {
   city: string,
   currentWeather: CurrentWeather,
-  hourlyWeather: PeriodicWeather[],
-  dailyWeather: PeriodicWeather[],
+  hourlyWeather: IHourWeather[],
+  dailyWeather: IDayWeather[],
 };
